@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#DDDDDD"
+    tools:context=".MenuActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/tv_my_name"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btn_mu_dk"
+        android:text="每日打卡"
+
+        android:textSize="27dp"
+        android:layout_below="@+id/menu_recycler_view"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        ></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btn_mu_remind"
+        android:text="设置提醒"
+
+        android:textSize="27dp"
+        android:layout_below="@+id/btn_mu_dk"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        ></Button>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_my_name"
+
+        android:layout_marginTop="5dp"
+
+        android:textSize="25dp"
+        android:text="欢迎使用打卡APP：某某某"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="40dp"
+        ></TextView>
+
+</RelativeLayout>
