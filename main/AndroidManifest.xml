@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,13 +13,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClockAppliction"
         tools:targetApi="31">
+        <activity
+            android:name=".A3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".A2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".A1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TeacherActivity"
+            android:exported="false" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".RegActivity" />
-
         <activity android:name=".ClockActivity" />
-        <activity android:name=".ListActivity" />
-        <receiver android:name=".AlarmReceiver" android:process=":remote"/>
-        <activity android:name=".SetTimeActivity" />
+        <service android:name=".service.ServiceDate"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.clockappliction.service.SERVICEDATE"/>
+            </intent-filter>
+        </service>
+        <activity android:name=".SetTimeActivity"
+            android:exported="true">
+
+
+        </activity>
+
+
+        <receiver
+            android:name=".SetTimeActivity$AlarmReceiver"
+            android:process=":remote"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="ALARM"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".TimeReceiver"
+            android:process=":remote"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="ALARM2"/>
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -28,7 +71,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

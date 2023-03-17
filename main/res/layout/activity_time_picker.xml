@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/pic_bg1"
     >
 
     <TextView
@@ -13,9 +14,13 @@
         ></TextView>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:layout_height="60dp"
+        android:textSize="20dp"
         android:id="@+id/et_remind"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bg_edit"
+        android:layout_above="@+id/btn_time"
         android:hint="输入提醒事件"
         ></EditText>
     <Button
@@ -23,9 +28,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_time"
         android:text="设置时间"
-        android:textSize="30dp"
+        android:textSize="28dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/btn_send"
         ></Button>
 
     <Button
@@ -33,8 +40,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_send"
         android:text="点击设置提醒"
-        android:textSize="30dp"
+        android:textSize="28dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
         ></Button>
-</LinearLayout>
+</RelativeLayout>

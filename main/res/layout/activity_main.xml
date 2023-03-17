@@ -4,18 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#DDDDDD"
-    tools:context=".MainActivity">
+    android:background="@mipmap/pic_5"
+    tools:context=".MainActivity"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_title"
-        android:text="欢迎使用每日打卡APP!"
-        android:textSize="30sp"
-        android:layout_marginTop="70dp"
+        android:id="@+id/tv_title0"
+        android:text="欢迎使用"
+        android:textSize="50sp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title"
+        android:text="每日打卡APP"
+        android:textSize="50sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/tv_title0"
+        android:textStyle="bold"
+        android:textColor="@color/blue_1"
          />
     <EditText
         android:layout_width="match_parent"
@@ -26,14 +41,14 @@
         android:background="@drawable/bg_edit"
 
         android:layout_below="@+id/tv_title"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         ></EditText>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
+        android:inputType="textPassword"
         android:id="@+id/et_log_password"
         android:hint="   密码"
         android:background="@drawable/bg_edit"
@@ -49,9 +64,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_login"
         android:text="登录"
-        android:textSize="26dp"
+        android:textSize="28dp"
+
         android:layout_below="@+id/et_log_password"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         ></Button>
@@ -61,13 +77,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_reg"
         android:text="注册"
-        android:textSize="26dp"
+        android:textSize="28dp"
 
         android:layout_below="@+id/btn_login"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         ></Button>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_save1"
+        android:text="记住账号密码"
+        android:textColor="@color/white_text"
+        android:textSize="18sp"
+        android:layout_below="@+id/et_log_password"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp" />
 
 
 </RelativeLayout>

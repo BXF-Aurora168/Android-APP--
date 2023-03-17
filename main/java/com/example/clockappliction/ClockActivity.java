@@ -21,8 +21,6 @@ public class ClockActivity extends AppCompatActivity implements View.OnClickList
     private static int jud ;
     static int KeepCou=1;
     static int MaxCou=1;
-//今天打卡--》将今天的判断设为1--》今天再次打卡--》不允许
-    //明天再次打卡--》判断日期变更--》将判断设为0--》允许打卡--》》设为1--》判断今日日期未变更-->不允许再次打卡
     //检查判断值为0--》允许打卡
     //检查判断值为1--》判断日期是否变更--》变更---判断设为0 -----允许打卡
     //                              》未变更---判断设为1----不允许打卡

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/pic_1"
+    tools:context=".TeacherActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title0"
+        android:text="欢迎使用"
+        android:textSize="50sp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/white_text"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title"
+        android:text="每日打卡APP"
+        android:textSize="50sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/tv_title0"
+        android:textStyle="bold"
+        android:textColor="@color/white_text"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:id="@+id/et_teacher_id"
+        android:hint="   教师工号"
+        android:background="@drawable/bg_edit"
+
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        ></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:id="@+id/et_teacher_password"
+        android:hint="   教师密码"
+        android:background="@drawable/bg_edit"
+        android:layout_below="@+id/et_teacher_id"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        ></EditText>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_teacher_login"
+        android:text="教师登录"
+        android:textSize="28dp"
+
+        android:layout_below="@+id/et_teacher_password"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        ></Button>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_save2"
+        android:layout_below="@+id/et_teacher_password"
+        android:layout_marginLeft="40dp"
+        android:text="记住账号密码"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp" />
+
+
+
+</RelativeLayout>

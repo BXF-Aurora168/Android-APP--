@@ -4,8 +4,10 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#DDDDDD"
+    android:background="@mipmap/pic_5"
     tools:context=".MenuActivity">
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/menu_recycler_view"
@@ -47,10 +49,11 @@
 
         android:layout_marginTop="5dp"
 
-        android:textSize="25dp"
+        android:textSize="18dp"
+        android:textColor="@color/white_text"
         android:text="欢迎使用打卡APP：某某某"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="10dp"
         ></TextView>
 
 </RelativeLayout>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#DDDDDD"
+    android:background="@mipmap/pic_5"
     tools:context=".RegActivity">
 
     <TextView
@@ -17,11 +17,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="98dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="50dp"
         android:text="注册账号"
-        android:textColor="#000"
+        android:textColor="@color/blue_1"
         android:textSize="50sp"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -74,7 +75,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
+        android:inputType="textPassword"
         android:id="@+id/et_reg_password"
         android:hint="   密码"
         android:background="@drawable/bg_edit"
@@ -91,7 +92,7 @@
         android:id="@+id/btn_reg_add"
         android:text="注册"
 
-        android:textSize="27dp"
+        android:textSize="29dp"
         android:layout_below="@+id/et_reg_password"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="40dp"

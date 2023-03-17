@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.example.clockappliction.Information.Clock;
 import com.example.clockappliction.Information.Student;
 
+import java.util.ArrayList;
+
 public class CRUD {
 
     private DBHelper dbHelper;
@@ -60,9 +62,12 @@ public class CRUD {
                 clock.summary = cursor.getString(cursor.getColumnIndex(Clock.SUMMARY));
                 clock.maxday = cursor.getString(cursor.getColumnIndex(Clock.MAXDAY));
                 clock.keep = cursor.getString(cursor.getColumnIndex(Clock.KEEP));
+                cursor.close();
+                db.close();
                 return clock;
         }
         cursor.close();
+        db.close();
         return null;
     }
     @SuppressLint("Range")
@@ -78,9 +83,12 @@ public class CRUD {
             clock.summary = cursor.getString(cursor.getColumnIndex(Clock.SUMMARY));
             clock.maxday = cursor.getString(cursor.getColumnIndex(Clock.MAXDAY));
             clock.keep = cursor.getString(cursor.getColumnIndex(Clock.KEEP));
+            cursor.close();
+            db.close();
             return clock;
         }
         cursor.close();
+        db.close();
         return null;
     }
     @SuppressLint("Range")
@@ -91,6 +99,7 @@ public class CRUD {
         cursor.moveToFirst();
         int result = cursor.getInt(0);
         cursor.close();
+        db.close();
         return result;
     }
     @SuppressLint("Range")
@@ -111,14 +120,12 @@ public class CRUD {
         Student student = new Student();
         Cursor cursor = db.rawQuery(selectQuery,new String[]{String.valueOf(id)});
         if (cursor.moveToFirst()){
-            do {
                 student.keyword = cursor.getInt(cursor.getColumnIndex(Student.KEYWORD));
                 student.id = cursor.getString(cursor.getColumnIndex(Student.ID));
                 student.name = cursor.getString(cursor.getColumnIndex(Student.NAME));
                 student.grade = cursor.getString(cursor.getColumnIndex(Student.GRADE));
                 student.phone = cursor.getString(cursor.getColumnIndex(Student.PHONE));
                 student.password = cursor.getString(cursor.getColumnIndex(Student.PASSWORD));
-            }while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
@@ -142,19 +149,65 @@ public class CRUD {
         Student student = new Student();
         Cursor cursor = db.rawQuery(selectQuery,new String[]{String.valueOf(keyword)});
         if (cursor.moveToFirst()){
-            do {
                 student.keyword = cursor.getInt(cursor.getColumnIndex(Student.KEYWORD));
                 student.id = cursor.getString(cursor.getColumnIndex(Student.ID));
                 student.name = cursor.getString(cursor.getColumnIndex(Student.NAME));
                 student.grade = cursor.getString(cursor.getColumnIndex(Student.GRADE));
                 student.phone = cursor.getString(cursor.getColumnIndex(Student.PHONE));
                 student.password = cursor.getString(cursor.getColumnIndex(Student.PASSWORD));
-
-            }while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return student;
+    }
+    @SuppressLint("Range")
+    public ArrayList<Clock> getClockByWord(String word){
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        ArrayList<Clock> list1 = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + Clock.TABLE + " WHERE " + Clock.WORD + " LIKE "+"?" ;
+
+        Cursor cursor = db.rawQuery(selectQuery,new String[]{String.valueOf("%"+word+"%")});
+
+        if (cursor.moveToFirst()){
+            do {
+                Clock clock = new Clock();
+                clock.date = cursor.getString(cursor.getColumnIndex(Clock.DATE));
+                clock.word = cursor.getString(cursor.getColumnIndex(Clock.WORD));
+                clock.summary = cursor.getString(cursor.getColumnIndex(Clock.SUMMARY));
+                clock.maxday = cursor.getString(cursor.getColumnIndex(Clock.MAXDAY));
+                clock.keep = cursor.getString(cursor.getColumnIndex(Clock.KEEP));
+                list1.add(clock);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return list1;
+    }
+    @SuppressLint("Range")
+    public ArrayList<Clock> getClockBySum(String sum){
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        ArrayList<Clock> list1 = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + Clock.TABLE + " WHERE " + Clock.SUMMARY + " LIKE "+"?" ;
+
+
+        Cursor cursor = db.rawQuery(selectQuery,new String[]{String.valueOf("%"+sum+"%")});
+
+        if (cursor.moveToFirst()){
+            do {
+                Clock clock = new Clock();
+                clock.date = cursor.getString(cursor.getColumnIndex(Clock.DATE));
+                clock.word = cursor.getString(cursor.getColumnIndex(Clock.WORD));
+                clock.summary = cursor.getString(cursor.getColumnIndex(Clock.SUMMARY));
+                clock.maxday = cursor.getString(cursor.getColumnIndex(Clock.MAXDAY));
+                clock.keep = cursor.getString(cursor.getColumnIndex(Clock.KEEP));
+                list1.add(clock);
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return list1;
     }
 
 }

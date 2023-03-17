@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#DDDDDD"
+    android:background="@mipmap/pic_bg2"
     tools:context=".ClockActivity">
 
     <TextView
@@ -56,6 +56,7 @@
         android:text="坚持天数:1"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:textColor="@color/green_text"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="15dp"
@@ -67,6 +68,7 @@
         android:text="历史最长天数:1"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:textColor="@color/green_text"
         android:layout_below="@+id/tv_dk_keep"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="40dp"
@@ -79,6 +81,7 @@
         android:text="日期:2023.03.08"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:textColor="@color/green_text"
         android:layout_below="@+id/tv_dk_maxday"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
