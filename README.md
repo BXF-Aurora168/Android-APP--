@@ -12,8 +12,7 @@
 
 4.能够实现闹钟提醒功能，设定时间，到时间自动提醒。
 
-# My first Android practice project - Punch in Daily APP-
-This is an Android beginner's exercise project.
+My first Android practice project - Punch in Daily APP-This is an Android beginner's exercise project.
 
 Simple Android application - daily punch card APP connection SQLite database
 Currently implemented functions:
