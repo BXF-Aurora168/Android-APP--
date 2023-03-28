@@ -1,6 +1,5 @@
 # My first Android practice project
-#我的第一个Android练习项目-每日打卡APP-
-这是一个Android初学者的练习项目。
+# 我的第一个Android练习项目-每日打卡APP-这是一个Android初学者的练习项目。
 
 简单的安卓应用-每日打卡APP实现连接SQLite数据库
 目前实现的功能：
